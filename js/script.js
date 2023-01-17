@@ -30,9 +30,9 @@ const productBtn = document.getElementById("productBtn");
 function loadPageValues(){
     
     // we access the banking values through the id on the different div's that we set in our dom section
-    loadBalance.innerText = bankInstance.getBalance();
-    loadLoanBalance.innerText = bankInstance.getLoanBalance();
-    loadWorkBalance.innerText = workInstance.getWorkBalance();
+    loadBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getBalance());
+    loadLoanBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getLoanBalance());
+    loadWorkBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(workInstance.getWorkBalance());
     repayLoanBtn.style.display = 'none';
 
 
@@ -55,7 +55,7 @@ function loadFeatures(id){
     productImg.src = laptopsInstance.apiUrl+laptop.image;
     productTitle.innerHTML = laptop.title;
     productDesc.innerHTML = laptop.description;
-    productPrice.innerHTML = laptop.price+" DKK";
+    productPrice.innerHTML = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(laptop.price);
 
     features += `</ul>`;
 
