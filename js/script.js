@@ -66,7 +66,13 @@ function loadFeatures(id){
 
 
 function loanPrompt(){
-    bankInstance.getLoan(bankInstance.getBalance(),parseInt(prompt()));
+    const value = prompt();
+    
+    if(isNaN(value)){
+        alert("A loan may only contain numbers.");
+    } else {
+        bankInstance.getLoan(bankInstance.getBalance(),parseInt(value));
+    }
 }
 
 

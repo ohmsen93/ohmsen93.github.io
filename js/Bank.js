@@ -32,10 +32,12 @@ class Bank {
                 this.updateLoanBalance(-loan);
             } else {
                 console.log("error, loan sum to large");
+                alert("Error: the sum of the loan has exceeded the loan capacity, the loan capacity is twice the size of the current bank balance.");
             }
 
         } else {
             console.log("error, loan already taken");
+            alert("Error: the current session already has an outstanding loan, please repay the loan before proceeding with requesting a new loan.");
         }
     }
 
