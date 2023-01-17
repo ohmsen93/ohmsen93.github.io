@@ -1,9 +1,9 @@
 // Require and instantiate the classes
 import Bank from './Bank.js';
-const bankInstance = new Bank(100,0,0);
+const bankInstance = new Bank(100, 0, 0);
 
 import Work from './Work.js';
-const workInstance = new Work(0,100, bankInstance);
+const workInstance = new Work(0, 100, bankInstance);
 
 import Laptops from './Laptops.js';
 const laptopsInstance = new Laptops('https://hickory-quilled-actress.glitch.me/', bankInstance);
@@ -27,8 +27,8 @@ const productBtn = document.getElementById("productBtn");
 
 
 // Here we write the function to populate our html objects with the values from our javascript
-function loadPageValues(){
-    
+function loadPageValues() {
+
     // we access the banking values through the id on the different div's that we set in our dom section
     loadBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getBalance());
     loadLoanBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getLoanBalance());
@@ -36,24 +36,24 @@ function loadPageValues(){
     repayLoanBtn.style.display = 'none';
 
 
-    if(bankInstance.loanBalance < 0){
+    if (bankInstance.loanBalance < 0) {
         repayLoanBtn.style.display = 'block';
 
     }
 
 }
 
-function loadFeatures(id){
+function loadFeatures(id) {
     // Loads the first Laptop data to features
     let features = `<ul>`;
 
     const laptop = laptopsInstance.data[id];
 
     laptop.specs.forEach(element => {
-        features +=`<li><p>${element}</p></li>`;
+        features += `<li><p>${element}</p></li>`;
     });
 
-    productImg.src = laptopsInstance.apiUrl+laptop.image;
+    productImg.src = laptopsInstance.apiUrl + laptop.image;
     productTitle.innerHTML = laptop.title;
     productDesc.innerHTML = laptop.description;
     productPrice.innerHTML = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(laptop.price);
@@ -66,13 +66,13 @@ function loadFeatures(id){
 }
 
 
-function loanPrompt(){
+function loanPrompt() {
     const value = prompt();
-    
-    if(isNaN(value)){
+
+    if (isNaN(value)) {
         alert("A loan may only contain numbers.");
     } else {
-        bankInstance.getLoan(bankInstance.getBalance(),parseInt(value));
+        bankInstance.getLoan(bankInstance.getBalance(), parseInt(value));
     }
 }
 
@@ -105,7 +105,7 @@ await laptopsInstance.laptopApi();
 let laptopOptions = ``;
 
 laptopsInstance.data.forEach(element => {
-    laptopOptions += `<option value='${element.id-1}'>${element.title}</option>`;
+    laptopOptions += `<option value='${element.id - 1}'>${element.title}</option>`;
 });
 
 laptopSelect.innerHTML = laptopOptions;
