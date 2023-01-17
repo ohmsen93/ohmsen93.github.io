@@ -23,16 +23,16 @@ class Work{
         if(this.bankInstance.loanBalance != 0){
             // then we check if the loanBalance is below 100
             if(Math.abs(this.bankInstance.loanBalance) < 100){
-                let remainingFunds = this.workBalance + this.bankInstance.loanBalance;
+                const remainingFunds = this.workBalance + this.bankInstance.loanBalance;
 
                 // if the loanBalance is below 100, we update the balance with the remaining funds, and then we zero our loanBalance with math.abs
                 this.bankInstance.updateBalance(remainingFunds);
                 this.bankInstance.updateLoanBalance(Math.abs(this.bankInstance.loanBalance));
             } else {
                 // if the loanBalance is above 100, we first calculate 10% of our workBalance.
-                let deduction = this.workBalance*0.1;
+                const deduction = this.workBalance*0.1;
                 // then we calculate the remaining 90%.
-                let transferAmmount = this.workBalance-deduction;
+                const transferAmmount = this.workBalance-deduction;
         
                 //we then transfer 90% to our bankBalance, and 10% to our loanBalance.
                 this.bankInstance.updateBalance(transferAmmount);
@@ -48,7 +48,7 @@ class Work{
 
     loanTransfer(){
         //First we calculate wether we have funds remaining after transfering the money from workBalance to loanBalance.
-        let remainingLoanAmmount = this.workBalance + this.bankInstance.loanBalance;
+        const remainingLoanAmmount = this.workBalance + this.bankInstance.loanBalance;
         console.log("workbalance: "+this.workBalance+", loanbalance: "+this.bankInstance.loanBalance+", remainingLoanAmmount: "+remainingLoanAmmount);
 
         //If we have money remaining

@@ -47,7 +47,8 @@ function loadFeatures(id){
     // Loads the first Laptop data to features
     let features = `<ul>`;
 
-    let laptop = laptopsInstance.data[id];
+    const laptop = laptopsInstance.data[id];
+
     laptop.specs.forEach(element => {
         features +=`<li><p>${element}</p></li>`;
     });
@@ -122,7 +123,7 @@ laptopSelect.addEventListener("change", (event) => {
 
 // purchase btn trigger
 productBtn.addEventListener("click", (event) => {
-    let id = laptopSelect.value;
+    const id = laptopSelect.value;
 
     console.log("purchase start");
     laptopsInstance.laptopPurchase(id, bankInstance);
