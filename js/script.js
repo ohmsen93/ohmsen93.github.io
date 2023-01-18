@@ -30,9 +30,9 @@ const productBtn = document.getElementById("productBtn");
 function loadPageValues() {
 
     // we access the banking values through the id on the different div's that we set in our dom section
-    loadBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getBalance());
-    loadLoanBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getLoanBalance());
-    loadWorkBalance.innerText = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(workInstance.getWorkBalance());
+    loadBalance.innerText = "Balance: "+new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getBalance());
+    loadLoanBalance.innerText = "Loanbalance: "+new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(bankInstance.getLoanBalance());
+    loadWorkBalance.innerText = "Workbalance: "+new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(workInstance.getWorkBalance());
     repayLoanBtn.style.display = 'none';
 
 
