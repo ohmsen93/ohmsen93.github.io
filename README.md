@@ -1,50 +1,70 @@
-# Computer Store
-Computer store is an application designed to introduce new students to the basics of JavaScript coding.
-It is created in HTML, CSS, and JavaScript.
+# Getting Started with Create React App
 
-## Access
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The application can be accessed through the GitHub pages link [https://ohmsen93.github.io/].
+## Available Scripts
 
-The repository can be accessed through the GitHub link [https://github.com/ohmsen93/ohmsen93.github.io].
+In the project directory, you can run:
 
-## Usage
+### `npm start`
 
-### Bank
-In the bank container, we have access to two values and a button.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The bank balance, which displays the current balance for the bank instance.
-The loan balance, which displays the current loan-balance for the bank instance.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-The "Get a loan" button, which enables the user to request a loan, the input has to be numbers and be equals or less than twice the size of the current balance for the bank instance, otherwise they will be alerted through message prompts.
+### `npm test`
 
-### Work
-In the work container, we have access to one value, and three buttons.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The work balance, which displays the current work-balance for the work instance.
+### `npm run build`
 
-The "Repay loan" button, which transfers the work-balance towards the loan-balance, it is only visible if the session has an outstanding loan.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The "Bank" button, which transfers 10% of the work-balance towards the loan-balance, and the remaining 90% towards the bank-balance, if no loan-balance is outstanding, it transfers 100% to bank-balance.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-The "Work" button, which increments the work-balance by 100.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Laptops
-In the laptops container, we have access to a dropdown, and a list of features.
+### `npm run eject`
 
-The dropdown is a selection of laptops that are generated through a supplied API.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-The list of features, refers to the specifications for the selected laptop.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Purchase Area
-In the purchase area, we have access to an image, title, description, price and a "Buy Now" button.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-The image url is supplied through the api, and is based of the current selection in the laptops dropdown.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-The title is supplied through the api, and is based of the current selection in the laptops dropdown.
+## Learn More
 
-The description is supplied through the api, and is based of the current selection in the laptops dropdown.
- 
-The price is supplied through the api, and is based of the current selection in the laptops dropdown.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-The "Buy Now" button, checks the price vs the current sessions bank-balance, if higher or equals it buys the selected laptop and withdraws the funds from the bank-balance, if lower it alerts the user.
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
